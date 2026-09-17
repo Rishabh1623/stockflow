@@ -1,0 +1,20 @@
+# Never send local secrets or environment config into the build context
+.env
+.env.example
+
+# Local dev/tooling artifacts — irrelevant inside the image, and .venv in
+# particular would be a large, platform-mismatched copy if it ever leaked in
+.venv
+.python-version
+.git
+.gitignore
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+
+# Not needed at runtime or in the migration image
+tests
+scripts
+PLAN.md
+*.md
